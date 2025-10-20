@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Doc</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<!--document.body.classList.add("access-guaranted");-->
+
+<body class="docs-page access-guaranted" data-bs-spy="scroll" data-bs-target="#docs-nav" data-bs-root-margin="-100px 0px -40%">
+<header class="header fixed-top">
+    <div class="branding docs-branding">
+        <div class="container-fluid position-relative py-2">
+            <div class="docs-logo-wrapper gap-2 d-flex">
+                <button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible d-xl-none" type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="site-logo">
+                    <a class="navbar-brand" href="index.html">
+                        <span class="logo-text">IEI <span class="text-alt">Lab</span></span>
+                    </a> | Documentation
+                    <span class="badge bg-primary"></span>
+                </div>
+            </div>
+
+            <div class="docs-top-utilities d-flex justify-content-end align-items-center gap-3">
+                <div class="top-search-box d-none d-lg-flex">
+                    <form class="search-form">
+                        <input type="search" placeholder="Search the docs..." name="search" class="form-control search-input" autocomplete="off">
+                        <div id="results"></div>
+                    </form>
+                </div>
+
+                <button type="button" class="btn-changelog btn btn-primary d-none d-lg-flex" data-bs-toggle="modal" data-bs-target="#changelogModal">
+                    Changelog
+                </button>
+                <a type="button" href="https://github.com/mxTuhin/IEI-Lab" class="btn-changelog btn btn-dark d-none d-lg-flex" target="_blank">
+                    Github URL
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="docs-wrapper">
+    <div id="docs-sidebar" class="docs-sidebar">
+        <div class="top-search-box d-lg-none p-3">
+            <form class="search-form">
+                <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+                <button type="submit" class="btn search-btn" value="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+        <nav id="docs-nav" class="docs-nav navbar">
+
+        </nav>
+    </div>
+
+
+    <div class="docs-content">
+        <div class="container">
+            <article class="docs-article" id="section-1">
+
+                <header class="docs-header">
+                    <h1 class="docs-heading">MetaHuman Installation and Audio Facial Animation in Unreal Engine 5.5 – Step-by-Step Guide </h1>
+                    <section class="docs-intro">
+                        <p>This tutorial will guide you step-by-step through the process of installing and using MetaHuman in Unreal Engine 5.5, including the new Audio-to-Facial Animation feature. Whether you’re just starting with Unreal or exploring digital humans for the first time, this guide breaks everything down into clear, easy-to-follow steps. You’ll learn how to install and enable the required plugins like Fab, MetaHuman, and MetaHuman Animator, how to bring a MetaHuman character into your project, and finally how to generate lifelike facial animations directly from recorded audio. By the end, you’ll have a working MetaHuman character in your Unreal Engine scene that can talk and face animates according to the voice</p>
+                    </section>
+
+                    <h5>Engine Required</h5>
+
+                    <div class="docs-code-block">
+              <pre class="shadow-lg rounded"><code class="language-json hljs">
+                  Unreal Engine: Version 5.5 or later
+              </code></pre>
+                    </div>
+
+                    <h5>Plugins Required</h5>
+
+                    <div class="docs-code-block">
+              <pre class="shadow-lg rounded"><code class="language-json hljs">
+                  1. Quixel Bridge         2. FAB           3. MetaHuman
+              </code></pre>
+                    </div>
+                </header>
+
+                <section class="docs-section" id="part-a">
+                    <h3 class="section-heading">Part A: Install / Bring a MetaHuman into UE 5.5</h3>
+                    <div class="container">
+
+                        <h5 class="badge bg-warning">Install UE & open a clean project</h5>
+                        <ul>
+                            <li>Install <strong class="code">Unreal Engine 5.5</strong> from Epic Games Launcher → Launch.</li>
+                            YouTube URL: <a href="https://youtu.be/V1Aw68ArYMo?si=vkJLuVjNa7Q8_5kD" target="_blank">Click Here For Video Tutorial </a>
+                            <li>Install <b>Quixel Bridge</b> if not installed automatically</li> YouTube URL: <a href="https://youtu.be/krPqLCWEOv8?si=9M4b7XKTaNS8eORT&t=64" target="_blank">Click Here For Video Tutorial </a>
+                            <li>Create a Blank project <b>1.</b> Blueprint <b>2.</b> configured for Desktop/Console <b>3.</b> Maximum Quality <b>4.</b> Starter Content ON.</li>
+                        </ul>
+
+                        <h5 class="badge bg-warning">Enable required plugins</h5>
+                        <ul>
+                            <li>Go To <a href="https://www.fab.com/listings/055a6486-ad17-4590-aa1e-261d47f7f041" target="_blank">MetaHuman Plugin</a> in Fab Store. Click on Add To My Library [ Click Image To Zoom ]</li>
+                            <img class="mb-3 img-fluid img-thumbnail" data-action="zoom" src="/assets/images/um_p1.png" alt="Fab MetaHuman Plugin" class="img-fluid my-3 rounded shadow-lg">
+                            <li>Come back to Epic Games Library Section and Install MetaHuman</li>
+                            <img class="mb-3 img-fluid img-thumbnail" data-action="zoom" src="/assets/images/um_p1.png" alt="Fab MetaHuman Plugin" class="img-fluid my-3 rounded shadow-lg">
+                            <li>Open Unreal Engine 5.5 and then Navigate to Edit → Plugins.</li>
+                            <li>Search & enable the following plugins:
+                                <ul>
+                                    <li style="list-style-type: disc;">MetaHuman</li>
+                                    <li style="list-style-type: disc;">MetaHuman SDK </li>
+                                    <li style="list-style-type: disc;">Fab (should be enabled by default)</li>
+                                    <li style="list-style-type: disc;">Bridge (should be enabled by default)</li>
+                                </ul>
+                            </li>
+                            <img class="mb-3 img-fluid img-thumbnail" data-action="zoom" src="/assets/images/um_p1.png" alt="Fab MetaHuman Plugin" class="img-fluid my-3 rounded shadow-lg">
+                            <li>Restart the editor when prompted.</li>
+                        </ul>
+
+                        <h5 class="badge bg-warning">Get a MetaHuman into your project</h5>
+
+                        <div class="option-box">
+                            <ul>
+                                <li>Go to Window → Quixel Bridge </li>
+                                <img class="mb-3 img-fluid img-thumbnail" data-action="zoom" src="/assets/images/um_p1.png" alt="Fab MetaHuman Plugin" class="img-fluid my-3 rounded shadow-lg">
+                                <li>Click on MetaHuman Tab. Select a Character. It On The left bottom corner you will see button for login</li>
+                                <img class="mb-3 img-fluid img-thumbnail" data-action="zoom" src="/assets/images/um_p1.png" alt="Fab MetaHuman Plugin" class="img-fluid my-3 rounded shadow-lg">
+                                <li>Sign in → Select a Character → Download</li>
+                                <li>The MetaHuman folder appears in Content Browser, drag the <span class="code">BP_</span> character into your level.</li>
+                                <img class="mb-3 img-fluid img-thumbnail" data-action="zoom" src="/assets/images/um_p1.png" alt="Fab MetaHuman Plugin" class="img-fluid my-3 rounded shadow-lg">
+                            </ul>
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+                <section class="docs-section" id="part-B">
+                    <h3 class="section-heading">Part B: Generate Audio from Text using ElevenLabs</h3>
+
+                    <h5 class="badge bg-warning">Generate Audio / Use Any Existing Audio</h5>
+                    <ul>
+                        <li>Go to <a href="https://elevenlabs.io" target="_blank">https://elevenlabs.io</a></li>
+                        <li>Log in or create a free account.</li>
+                        <li>Open <b>Text to Speech</b> from the menu.</li>
+                        <li>Paste your desired text (I have added a reference below).</li>
+                        <div class="docs-code-block">
+                              <pre class="shadow-lg rounded"><code class="language-json hljs"> “Good morning, everyone! I’m Ms. Hadley, and I’m so excited to welcome you to your very first Chemistry Lab!
+                                  Here, we’ll explore bubbling reactions, colorful mixtures, and the amazing world of matter.
+                                  Chemistry isn’t just formulas—it’s curiosity, discovery, and a bit of science magic!
+                                  Remember, it’s okay to make mistakes and ask questions. Today, you’re not just
+                                  students—you’re young scientists. So, goggles on and let’s get experimenting!”
+
+                              </code></pre>
+                        </div>
+                        <li>Choose a voice you like.</li>
+                        <li>Click Generate to create the audio.</li>
+                        <li>Click Download and save the file as <span class="code">WAV</span> or <span class="code">MP3</span>.</li>
+                        <img class="mb-3 img-fluid img-thumbnail" data-action="zoom" src="/assets/images/um_el_1.png" alt="Fab MetaHuman Plugin" class="img-fluid my-3 rounded shadow-lg">
+                    </ul>
+
+                    <h5 class="badge bg-warning">Import Audio In Unreal Engine</h5>
+                    <ul>
+                        <li>In Unreal Engine, open Content Browser → Import, and select your audio file.</li>
+                        <li>The audio appears as a SoundWave asset — now ready for MetaHuman Animator.</li>
+                    </ul>
+
+                </section>
+
+                <section class="docs-section" id="part-C">
+                    <h3 class="section-heading">Part C: Using MetaHuman Animator to Generate Facial Animation from Audio</h3>
+                    Optionally [YouTube URL]: <a href="https://youtu.be/cM0i0roO-zI?si=d-JRMHjVsJXhVy9b&t=65" target="_blank">Click Here For Video Tutorial </a> <br><br>
+                    <h5 class="badge bg-warning">Create MetaHuman Animator Performance</h5>
+                    <ul>
+                        <li>Right Click On Content Browser</li>
+                        <li>Select MetaHuman Animator → MetaHuman Performance</li>
+                        <img class="mb-3 img-fluid img-thumbnail" data-action="zoom" src="/assets/images/um_p1.png" alt="Fab MetaHuman Plugin" class="img-fluid my-3 rounded shadow-lg">
+                        <li>Double click to open the performance panel</li>
+                        <img class="mb-3 img-fluid img-thumbnail" data-action="zoom" src="/assets/images/um_p1.png" alt="Fab MetaHuman Plugin" class="img-fluid my-3 rounded shadow-lg">
+                    </ul>
+
+                    <h5 class="badge bg-warning">Generate Facial Animation from Audio</h5>
+                    <ul>
+                        <li>In Input Type. <b>Select Audio</b></li>
+                        <li>In the Audio field. Select <b>imported audio</b> file from the dropdown menu.</li>
+                        <li>In Control Rig field. Select <b>Face_ControlBoard_CtrlRig</b> from the dropdown menu.</li>
+                        <li>In Visualization Mesh field. Select <b>MetaHuman Character FaceMesh</b> from the dropdown menu.</li>
+                        <li>Click <b>Process</b> from Top left bar of the window. The system will process the audio and create facial animation data.</li>
+                        <img class="mb-3 img-fluid img-thumbnail" data-action="zoom" src="/assets/images/um_p1.png" alt="Fab MetaHuman Plugin" class="img-fluid my-3 rounded shadow-lg">
+                        <li>Once processing is complete, click Export Animation to transfer the facial animation to your MetaHuman character in the level.</li>
+                        <img class="mb-3 img-fluid img-thumbnail" data-action="zoom" src="/assets/images/um_p1.png" alt="Fab MetaHuman Plugin" class="img-fluid my-3 rounded shadow-lg">
+                    </ul>
+                </section>
+
+
+            </article>
+
+
+            <footer class="footer">
+                <div class="container text-center py-5">
+                    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+                    <small class="copyright"> 2025 | IEI Lab</small>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
+<!--docs-wrapper-->
+
+<!-- Modal -->
+<div class="modal fade" id="changelogModal" tabindex="-1" aria-labelledby="changelogModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title px-3 py-1" id="changelogModalLabel">Changelog</h4>
+                <button type="button" class="btn-close p-4" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <h6 class="mt-3"> <span class="p-2"> Version 1.0.0</span> - 19/10/2025</h6>
+                            <ul class="mt-3 mb-5">
+                                <li class="ms-3">Project Init and Structure</li>
+                                <li class="ms-3">Navbar Dynamic</li>
+
+                            </ul>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/assets/js/bootstrap.js"></script>
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/zoom.js"></script>
+<script src="/assets/js/flesler.js"></script>
+<script src="/assets/js/fuse.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/filefetch.js"></script>
+
+</body>
+
+</html>
